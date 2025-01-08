@@ -3,6 +3,9 @@ version: '3.8'
 services:
   jenkins:
     image: jenkins/jenkins:lts
+    build:
+      context: . # Dockerfile이 위치한 디렉터리
+      dockerfile: Dockerfile # 사용할 Dockerfile 이름
     container_name: jenkins
     ports:
       - "18080:8080" # Jenkins Web UI
